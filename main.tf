@@ -38,6 +38,10 @@ resource "aws_rds_cluster" "this" {
   backtrack_window                = "${var.backtrack_window}"
 
   tags = "${var.tags}"
+
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_rds_cluster_instance" "this" {
