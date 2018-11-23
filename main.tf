@@ -17,7 +17,7 @@ resource "aws_db_subnet_group" "this" {
 }
 
 resource "aws_rds_cluster" "this" {
-  cluster_identifier              = "${var.name}"
+  cluster_identifier_prefix       = "${var.name}"
   engine                          = "${var.engine}"
   engine_version                  = "${var.engine_version}"
   kms_key_id                      = "${var.kms_key_id}"
