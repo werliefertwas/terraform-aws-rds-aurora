@@ -39,7 +39,7 @@ resource "aws_rds_cluster" "this" {
   tags = "${var.tags}"
   
   lifecycle {
-    ignore_changes = [engine_version]
+    ignore_changes = ["engine_version"]
   }
 }
 
@@ -66,7 +66,7 @@ resource "aws_rds_cluster_instance" "this" {
   tags = "${var.tags}"
   
   lifecycle {
-    ignore_changes = [engine_version]
+    ignore_changes = ["engine_version"]
   }
 }
 
