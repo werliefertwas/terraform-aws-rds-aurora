@@ -37,6 +37,10 @@ resource "aws_rds_cluster" "this" {
   db_cluster_parameter_group_name = "${var.db_cluster_parameter_group_name}"
 
   tags = "${var.tags}"
+  
+  lifecycle {
+    ignore_changes = [engine_version]
+  }
 }
 
 resource "aws_rds_cluster_instance" "this" {
@@ -60,6 +64,10 @@ resource "aws_rds_cluster_instance" "this" {
   performance_insights_kms_key_id = "${var.performance_insights_kms_key_id}"
 
   tags = "${var.tags}"
+  
+  lifecycle {
+    ignore_changes = [engine_version]
+  }
 }
 
 resource "random_id" "snapshot_identifier" {
